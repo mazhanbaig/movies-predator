@@ -24,7 +24,7 @@
         </h1>
         <div class="flex justify-center flex-1">
           <input
-            class="bg-black text-white px-3 py-1 rounded-3xl border-2 border-white outline-none h-[40px] w-full md:max-w-[450px] lg:max-w-[550px]"
+            class="bg-black text-white px-3 py-1 rounded-3xl border-2 border-white outline-none h-[50px] w-full md:max-w-[450px] lg:max-w-[550px]"
             type="search" placeholder="Search" name="search" id="search" />
         </div>
         <div class="w-fit flex justify-end space-x-6">
@@ -56,14 +56,32 @@
       <a href="contact.html" class="block hover:underline">Contact</a>
     </div>
   </nav>
+  <!-- ended  -->
+  <!-- ended  -->
+  <!-- types section   -->
+  <div class="container-types h-[40px] w-full flex justify-around items-center 
+    text-white font-semibold text-sm sm:text-base
+    bg-gradient-to-br from-gray-500 via-gray-900 to-slate-400
+ shadow-md">
+    <button data-category="All"
+      class="category-btn hover:text-blue-400 hover:underline underline-offset-4 transition">All</button>
+    <button data-category="Hollywood"
+      class="category-btn hover:text-blue-400 hover:underline underline-offset-4 transition">Hollywood</button>
+    <button data-category="Bollywood"
+      class="category-btn hover:text-blue-400 hover:underline underline-offset-4 transition">Bollywood</button>
+    <button data-category="Pakistani"
+      class="category-btn hover:text-blue-400 hover:underline underline-offset-4 transition">Pakistani</button>
+    <button data-category="Anime"
+      class="category-btn hover:text-blue-400 hover:underline underline-offset-4 transition">Anime</button>
 
+  </div>
   <!-- Movie Section -->
   <div class="wrapper bg-black/90 w-full h-[100%] pb-[50px]">
-    <h1 class="text-xl text-white font-semibold sm:text-2xl md:text-3xl lg:text-4xl pt-[50px] text-center">
+    <h1 class="text-4xl sm:text-5xl md:text-7xl text-white font-semibold pt-[50px] text-center">
       Films
     </h1>
     <div id="movie-container"
-      class="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 px-4 mt-12 w-full">
+      class="grid gap-y-8 gap-x-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 px-4 mt-12 w-full">
       <!-- Movies injected by JS -->
     </div>
 
