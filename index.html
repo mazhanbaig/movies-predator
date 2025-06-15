@@ -1,245 +1,135 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="src/./output.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body class="font-sans">
-    <nav
-      class="bg-white/40 backdrop-blur-md text-white sticky top-0 left-0 w-full z-50 shadow-md"
-    >
-      <div
-        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[80px] flex items-center justify-between"
-      >
-        <!-- Desktop Layout -->
-        <div class="hidden md:flex w-full items-center justify-between">
-          <!-- Logo -->
-          <h1 class="text-2xl sm:text-3xl font-bold tracking-wide w-fit">
-            <span
-              class="bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text drop-shadow-md"
-            >
-              AZHAN
-            </span>
-          </h1>
-          <!-- Search bar -->
-          <div class="flex justify-center flex-1">
-            <input
-              class="bg-black text-white px-3 py-1 rounded-3xl border-2 border-white outline-none h-[40px] w-full md:max-w-[450px] lg:max-w-[550px]"
-              type="search"
-              placeholder="Search"
-              name="search"
-              id="search"
-            />
-          </div>
-          <!-- Menu links -->
-          <div class="w-fit flex justify-end space-x-6">
-            <a
-              href="index.html"
-              class="hover:underline hover:scale-105 underline-offset-4 transition text-black"
-              >Home</a
-            >
-            <a
-              href="#"
-              class="hover:underline underline-offset-4 transition text-black"
-              >Contact</a
-            >
-          </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="src/./output.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="font-sans">
+  <!-- Navbar -->
+  <nav class="bg-white/40 backdrop-blur-md text-white sticky top-0 left-0 w-full z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[80px] flex items-center justify-between">
+      <!-- Desktop Layout -->
+      <div class="hidden md:flex w-full items-center justify-between">
+        <h1 class="text-2xl sm:text-3xl font-bold tracking-wide w-fit">
+          <span class="bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text drop-shadow-md">
+            AZHAN
+          </span>
+        </h1>
+        <div class="flex justify-center flex-1">
+          <input
+            class="bg-black text-white px-3 py-1 rounded-3xl border-2 border-white outline-none h-[40px] w-full md:max-w-[450px] lg:max-w-[550px]"
+            type="search" placeholder="Search" name="search" id="search" />
         </div>
-        <!-- Mobile Layout -->
-        <div class="md:hidden w-full flex items-center justify-between">
-          <h1 class="text-2xl font-bold tracking-wide mr-[20px]">
-            <span
-              class="bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text"
-              >AZHAN</span
-            >
-          </h1>
-          <!-- Search bar -->
-          <div class="flex justify-center flex-1">
-            <input
-              class="bg-black text-white px-3 py-1 rounded-3xl border-2 border-white outline-none h-[40px] w-full md:max-w-[450px] lg:max-w-[550px]"
-              type="search"
-              placeholder="Search"
-              name="search"
-              id="search"
-            />
-          </div>
-          <button
-            id="menu-toggle"
-            class="focus:outline-none text-2xl w-[50px] h-[50px] text-white"
-          >
-            <i class="fas fa-bars"></i>
-          </button>
+        <div class="w-fit flex justify-end space-x-6">
+          <a href="index.html" class="hover:underline hover:scale-105 underline-offset-4 transition text-black">Home</a>
+          <a href="contact.html" class="hover:underline underline-offset-4 transition text-black">Contact</a>
         </div>
       </div>
 
-      <!-- Mobile Menu -->
-      <div
-        id="mobile-menu"
-        class="md:hidden hidden bg-black text-white w-[100px] h-fit flex-col space-y-4 py-4 px-3 absolute top-[80px] right-4 z-50 shadow-lg rounded-lg"
-      >
-        <a href="index.html" class="block hover:underline">Home</a>
-        <a href="#" class="block hover:underline">Contact</a>
-      </div>
-    </nav>
-    <!-- ended ended  -->
-    <!-- ended  -->
-    <div class="wrapper bg-black/90 w-full h-[100%]">
-      <h1
-        class="text-xl text-white font-semibold sm:text-2xl md:text-3xl lg:text-4xl pt-[50px] text-center"
-      >
-        Films
-      </h1>
-      <div
-        class="container flex justify-center items-center flex-wrap w-full mt-[50px] gap-[10px]"
-      >
-        <!-- 1 -->
-        <div
-          data-page="almovies/video1.html"
-          class="movie-box group flex flex-col justify-stretch bg-transparent w-[350px] h-[450px] p-[10px] rounded-2xl border-2 border-white"
-        >
-          <img
-            class="w-full h-2/4 border-2 border-cyan-900 rounded-2xl object-cover bg-no-repeat bg-top"
-            src="pics/freddy.jpg"
-            data-page="almovies/video1.html"
-            alt=""
-          />
-          <h1
-            class="text-center text-2xl font-semibold bg-gradient-to-r from-purple-400 to-blue-800 text-transparent bg-clip-text"
-          >
-            Freddy
-          </h1>
-          <p class="description text-white text-justify">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius
-            necessitatibus fugit porro aperiam distinctio, mollitia animi
-            corporis quos unde ex quaerat minus accusamus quae numquam impedit
-            eos ab fuga provident.
-          </p>
-          <button
-            class="watch-btn mt-3 mb-3 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full shadow hidden hover:scale-105 transition group-hover:block"
-          >
-            Watch Now
-          </button>
+      <!-- Mobile Layout -->
+      <div class="md:hidden w-full flex items-center justify-between">
+        <h1 class="text-2xl font-bold tracking-wide mr-[20px]">
+          <span class="bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text">AZHAN</span>
+        </h1>
+        <div class="flex justify-center flex-1">
+          <input
+            class="bg-black text-white px-3 py-1 rounded-3xl border-2 border-white outline-none h-[40px] w-full md:max-w-[450px] lg:max-w-[550px]"
+            type="search" placeholder="Search" name="search" id="search" />
         </div>
-        <!-- 2 -->
-        <div
-          data-page="almovies/video2.html"
-          class="movie-box group flex flex-col justify-stretch p-[10px] bg-transparent w-[350px] h-[450px] rounded-2xl border-2 border-white"
-        >
-          <img class="w-full h-2/4 border-2 border-cyan-900 rounded-2xl
-          object-cover bg-no-repeat bg-center" src="pics/bhool2.jpg"
-          data-page="almovies/video1.html alt="">
-          <h1
-            class="text-center text-2xl font-semibold bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text"
-          >
-            Bhool Bhulaiyaa 2
-          </h1>
-          <p class="description text-white text-justify">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius
-            necessitatibus fugit porro aperiam distinctio, mollitia animi
-            corporis quos unde ex quaerat minus accusamus quae numquam impedit
-            eos ab fuga provident.
-          </p>
-          <button
-            class="watch-btn mt-3 mb-3 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full shadow hover:scale-105 transition hidden group-hover:block"
-          >
-            Watch Now
-          </button>
-        </div>
-        <!-- 3 -->
-        <div
-          data-page="almovies/video1.html"
-          class="movie-box group flex flex-col justify-stretch p-[10px] bg-transparent w-[350px] h-[450px] rounded-2xl border-2 border-white"
-        >
-          <img class="w-full h-2/4 border-2 border-cyan-900 rounded-2xl
-          object-contain bg-center bg-no-repeat" src="pics/dhamaka.jpg"
-          data-page="almovies/video1.html alt="">
-          <h1
-            class="text-center text-2xl font-semibold bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text"
-          >
-            Dhamaka
-          </h1>
-          <p class="description text-white text-justify">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius
-            necessitatibus fugit porro aperiam distinctio, mollitia animi
-            corporis quos unde ex quaerat minus accusamus quae numquam impedit
-            eos ab fuga provident.
-          </p>
-          <button
-            class="watch-btn mt-3 mb-3 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full shadow hover:scale-105 transition hidden group-hover:block"
-          >
-            Watch Now
-          </button>
-        </div>
-        <!-- 4 -->
-        <div
-          data-page="almovies/video3.html"
-          class="movie-box group flex flex-col justify-stretch p-[10px] bg-transparent w-[350px] h-[450px] rounded-2xl border-2 border-white"
-        >
-          <img class="w-full h-2/4 border-2 border-cyan-900 rounded-2xl
-          object-cover object-center bg-no-repeat"
-          src="pics/finaldestination.jpg" data-page="almovies/video1.html
-          alt="">
-          <h1
-            class="text-center text-2xl font-semibold bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text"
-          >
-            Final Destination
-          </h1>
-          <p class="description text-white text-justify">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius
-            necessitatibus fugit porro aperiam distinctio, mollitia animi
-            corporis quos unde ex quaerat minus accusamus quae numquam impedit
-            eos ab fuga provident.
-          </p>
-          <button
-            class="watch-btn mt-3 mb-3 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full shadow hover:scale-105 transition hidden group-hover:block"
-          >
-            Watch Now
-          </button>
-        </div>
-        <!-- 5 -->
-        <div
-          data-page="almovies/video4.html"
-          class="movie-box group flex flex-col justify-stretch p-[10px] bg-transparent w-[350px] h-[450px] rounded-2xl border-2 border-white"
-        >
-          <img class="w-full h-2/4 border-2 border-cyan-900 rounded-2xl
-          object-contain object-center bg-no-repeat" src="pics/mi.jpg"
-          data-page="almovies/video5.html alt="">
-          <h1
-            class="text-center text-2xl font-semibold bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text"
-          >
-            Mission Imposible
-          </h1>
-          <p class="description text-white text-justify">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius
-            necessitatibus fugit porro aperiam distinctio, mollitia animi
-            corporis quos unde ex quaerat minus accusamus quae numquam impedit
-            eos ab fuga provident.
-          </p>
-          <button
-            class="watch-btn mt-3 mb-3 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full shadow hover:scale-105 transition hidden group-hover:block"
-          >
-            Watch Now
-          </button>
-        </div>
-        <!-- No results message -->
-        <p
-          id="no-results"
-          class="mb-[20px] bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text text-center text-xl mt-10 hidden"
-        >
-          No match found
-        </p>
+        <button id="menu-toggle" class="focus:outline-none text-2xl w-[50px] h-[50px] text-white">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
     </div>
 
-    <script src="app.js"></script>
-  </body>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+      class="md:hidden hidden bg-black text-white w-[100px] h-fit flex-col space-y-4 py-4 px-3 absolute top-[80px] right-4 z-50 shadow-lg rounded-lg">
+      <a href="index.html" class="block hover:underline">Home</a>
+      <a href="contact.html" class="block hover:underline">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Movie Section -->
+  <div class="wrapper bg-black/90 w-full h-[100%] pb-[50px]">
+    <h1 class="text-xl text-white font-semibold sm:text-2xl md:text-3xl lg:text-4xl pt-[50px] text-center">
+      Films
+    </h1>
+    <div id="movie-container"
+      class="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 px-4 mt-12 w-full">
+      <!-- Movies injected by JS -->
+    </div>
+
+
+    <!-- No Results Message -->
+    <p id="no-results"
+      class="mb-[20px] bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text text-center text-xl mt-10 hidden">
+      No match found
+    </p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white py-10 px-6 mt-auto">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- About -->
+      <div>
+        <h2 class="text-xl font-semibold mb-3">AZHAN Movies</h2>
+        <p class="text-sm text-gray-400">
+          Your daily dose of entertainment. Stream the best movies right here, anytime, anywhere.
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h2 class="text-lg font-semibold mb-3">Quick Links</h2>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li><a href="index.html" class="hover:underline">Home</a></li>
+          <li><a href="#" class="hover:underline">Contact</a></li>
+          <li><a href="#" class="hover:underline">Support</a></li>
+          <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div>
+        <h2 class="text-lg font-semibold mb-3">Newsletter</h2>
+        <form class="flex flex-col space-y-2">
+          <input type="email" placeholder="Your email"
+            class="px-4 py-2 rounded-md bg-gray-800 text-white border border-gray-600 outline-none focus:ring-2 focus:ring-cyan-500" />
+          <button
+            class="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-4 py-2 rounded-md hover:opacity-90 transition">
+            Subscribe
+          </button>
+        </form>
+      </div>
+
+      <!-- Socials -->
+      <div>
+        <h2 class="text-lg font-semibold mb-3">Follow Us</h2>
+        <div class="flex space-x-4 text-xl">
+          <a href="#" class="hover:text-blue-500"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="hover:text-red-500"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 text-center text-sm text-gray-500 border-t border-gray-700 pt-4">
+      &copy; 2025 AZHAN Movies. All rights reserved.
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+
 </html>
