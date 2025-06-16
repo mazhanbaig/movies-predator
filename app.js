@@ -62,22 +62,60 @@ const container = document.getElementById("movie-container");
 
 movieList.forEach((movie) => {
   const movieBox = document.createElement("div");
-  movieBox.className = ` movie-box group flex flex-col justify-stretch bg-transparent w-full max-w-[320px] min-h-[300px] max-h-[300px] p-4 rounded-2xl border-2 border-white mx-auto`;
+  // movieBox.className = ` movie-box group flex flex-col justify-stretch bg-transparent w-full max-w-[320px] min-h-[300px] max-h-[300px] p-4 rounded-2xl border-2 border-white mx-auto`;
   movieBox.setAttribute("data-page", movie.page);
 
-  movieBox.innerHTML = `
-    <img class="w-full h-2/4 border-2 border-cyan-900 rounded-2xl object-cover bg-no-repeat bg-top"
-         src="${movie.image}" alt="${movie.title}" />
-    <h1 class="text-center text-2xl font-semibold bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text">
-      ${movie.title}
-    </h1>
-    <p class="description text-white text-justify line-clamp-2 transition-all duration-300">
+  // Set styling for each movie box
+movieBox.className = `
+movie-box group relative flex flex-col justify-between 
+aspect-square w-full max-w-[300px]              /* Square shape, max width */
+bg-[#0f0f0f] rounded-2xl                        /* Dark background, rounded corners */
+overflow-hidden border border-purple-600/30     /* Border with purple tint */
+shadow-lg hover:shadow-purple-500/40            /* Shadow with hover glow */
+transition-all duration-300 hover:scale-105     /* Smooth hover zoom effect */
+`;
+
+// Add inner content of the movie box
+movieBox.innerHTML = `
+
+<!-- Top part: Image (covers 55% of the box) -->
+<div class="w-full h-[55%] overflow-hidden">
+  <img 
+    src="${movie.image}"                        /* Movie image */
+    alt="${movie.title}"                        /* Alt text for image */
+    class="w-full h-full object-cover rounded-t-2xl"  /* Full width/height, cropped nicely, rounded top */
+  />
+</div>
+
+<!-- Bottom part: Text and button (takes 45%) -->
+<div class="flex flex-col justify-between h-[45%] px-4 py-2">
+
+  <!-- Movie title with gradient color and centered -->
+  <h1 class="text-center text-lg font-semibold 
+    bg-gradient-to-r from-purple-400 to-blue-500 
+    text-transparent bg-clip-text">
+    ${movie.title}
+  </h1>
+  
+  <!-- Movie description, 2 lines only -->
+  <p class="description text-sm text-gray-300 mt-1 
+    text-justify line-clamp-2">
     ${movie.description}
-    </p>
-    <button class="watch-btn mt-3 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full shadow hidden hover:scale-105 transition group-hover:block">
-      Watch Now
-    </button>
-  `;
+  </p>
+
+  <!-- Watch Now button, appears on hover only -->
+  <button class="watch-btn mt-2 px-3 py-2 
+    bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 
+    text-white rounded-full text-sm font-semibold 
+    hidden group-hover:block 
+    transition duration-300 hover:brightness-110">
+    Watch Now
+  </button>
+
+</div>
+`;
+
+
   container.appendChild(movieBox);
 });
 

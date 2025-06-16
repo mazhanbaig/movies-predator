@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AZHAN Movies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <style>
+        /* gradient text util */
+        .gradient-text {
+            background: linear-gradient(90deg, #ff6ec4, #7873f5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50 font-sans">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg shadow-md">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+            <h1 class="text-3xl font-extrabold gradient-text">AZHAN</h1>
+            <nav class="hidden md:flex space-x-6 text-gray-700 font-medium">
+                <a href="index.html" class="hover:text-pink-500">Home</a>
+                <a href="contact.html" class="hover:text-pink-500">Contact</a>
+            </nav>
+            <div class="flex-1 mx-8">
+                <input id="search" type="search" placeholder="Search movies..."
+                    class="w-full px-4 py-2 rounded-full border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-400" />
+            </div>
+            <button id="menu-toggle" class="md:hidden text-gray-700 text-2xl"><i class="fas fa-bars"></i></button>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-white/90 px-6 pb-4 space-y-2 text-gray-700 font-medium">
+            <a href="index.html" class="block hover:text-pink-500">Home</a>
+            <a href="contact.html" class="block hover:text-pink-500">Contact</a>
+        </div>
+    </header>
+
+    <!-- Categories -->
+    <section class="py-4">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-center gap-4 text-sm font-semibold">
+            <button data-category="All"
+                class="category-btn px-4 py-1 rounded-full bg-gradient-to-r from-green-300 to-blue-300 hover:from-green-400 hover:to-blue-400 transition">
+                All
+            </button>
+            <button data-category="Hollywood"
+                class="category-btn px-4 py-1 rounded-full bg-gradient-to-r from-yellow-300 to-red-300 hover:from-yellow-400 hover:to-red-400 transition">
+                Hollywood
+            </button>
+            <button data-category="Bollywood"
+                class="category-btn px-4 py-1 rounded-full bg-gradient-to-r from-pink-300 to-purple-300 hover:from-pink-400 hover:to-purple-400 transition">
+                Bollywood
+            </button>
+            <button data-category="Pakistani"
+                class="category-btn px-4 py-1 rounded-full bg-gradient-to-r from-teal-300 to-lime-300 hover:from-teal-400 hover:to-lime-400 transition">
+                Pakistani
+            </button>
+            <button data-category="Anime"
+                class="category-btn px-4 py-1 rounded-full bg-gradient-to-r from-indigo-300 to-purple-500 hover:from-indigo-400 hover:to-purple-600 transition">
+                Anime
+            </button>
+        </div>
+    </section>
+
+    <!-- Movie Grid -->
+    <main class="px-6 pb-12">
+        <h2 class="text-center text-4xl font-bold mb-8 gradient-text">Films</h2>
+        <div id="movie-container"
+            class="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+            <!-- injected by app.js -->
+        </div>
+        <p id="no-results" class="hidden mt-8 text-center text-xl text-gray-500">No match found</p>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white/90 border-t border-gray-200 py-12 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-gray-700">
+            <div>
+                <h3 class="text-xl font-bold mb-2">AZHAN Movies</h3>
+                <p class="text-sm">Your daily dose of entertainment. Stream the best movies right here, anytime,
+                    anywhere.</p>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-2">Quick Links</h4>
+                <ul class="space-y-1 text-sm">
+                    <li><a href="index.html" class="hover:text-pink-500">Home</a></li>
+                    <li><a href="contact.html" class="hover:text-pink-500">Contact</a></li>
+                    <li><a href="#" class="hover:text-pink-500">Support</a></li>
+                    <li><a href="#" class="hover:text-pink-500">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-2">Newsletter</h4>
+                <form class="space-y-2">
+                    <input type="email" placeholder="Your email"
+                        class="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-300" />
+                    <button type="submit"
+                        class="w-full py-2 rounded-md bg-gradient-to-r from-pink-400 to-purple-400 text-white font-medium hover:from-pink-500 hover:to-purple-500 transition">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-2">Follow Us</h4>
+                <div class="flex space-x-4 text-2xl">
+                    <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-pink-500 hover:text-pink-700"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-blue-400 hover:text-blue-600"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-red-500 hover:text-red-700"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <p class="mt-10 text-center text-sm text-gray-500">&copy; 2025 AZHAN Movies. All rights reserved.</p>
+    </footer>
+
+    <!-- Your existing app.js -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById("menu-toggle").addEventListener("click", () => {
+            const menu = document.getElementById("mobile-menu");
+            menu.classList.toggle("hidden");
+        });
+        // Movie data
+        const movieList = [
+            {
+                title: "Freddy",
+                description: "A twisted love story of a dentist with a dark secret.",
+                image: "pics/freddy.jpg",
+                page: "almovies/video1.html",
+                category: "Bollywood"
+            },
+            {
+                title: "Final Destination",
+                description: "You can't cheat death. Or can you?",
+                image: "pics/finaldestination.jpg",
+                page: "almovies/video4.html",
+                category: "Hollywood"
+            },
+            {
+                title: "Kabir Singh",
+                description: "A brilliant surgeon spirals into self-destruction.",
+                image: "pics/kabirsingh.jpg",
+                page: "almovies/video5.html",
+                category: "Bollywood"
+            },
+            {
+                title: "Mission Imposible",
+                description: "Ethan Hunt returns for another impossible task.",
+                image: "pics/mi.jpg",
+                page: "almovies/video5.html",
+                category: "Hollywood"
+            },
+            {
+                title: "Dhamaka",
+                description: "An ex-journalist gets a life-changing scoop.",
+                image: "pics/dhamaka.jpg",
+                page: "almovies/video3.html",
+                category: "Bollywood"
+            },
+            {
+                title: "Satyaprem Ki Katha",
+                description: "A heartwarming tale of love and healing.",
+                image: "pics/sathyaprem ki katha.jpg",
+                page: "almovies/video5.html",
+                category: "Bollywood"
+            },
+            {
+                title: "Bhool Bhulaiyaa 2",
+                description: "A thrilling journey through haunted corridors.",
+                image: "pics/bhool2.jpg",
+                page: "almovies/video2.html",
+                category: "Bollywood"
+            }
+        ];
+
+
+        // Inject movie boxes
+        const container = document.getElementById("movie-container");
+
+        movieList.forEach((movie) => {
+            const movieBox = document.createElement("div");
+            movieBox.className = ` movie-box group flex flex-col justify-stretch bg-transparent w-full max-w-[320px] min-h-[300px] max-h-[300px] p-4 rounded-2xl border-2 border-white mx-auto`;
+            movieBox.setAttribute("data-page", movie.page);
+
+            movieBox.innerHTML = `
+    <img class="w-full h-2/4 border-2 border-cyan-900 rounded-2xl object-cover bg-no-repeat bg-top"
+         src="${movie.image}" alt="${movie.title}" />
+    <h1 class="text-center text-2xl font-semibold bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text">
+      ${movie.title}
+    </h1>
+    <p class="description text-white text-justify line-clamp-2 transition-all duration-300">
+    ${movie.description}
+    </p>
+    <button class="watch-btn mt-3 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full shadow hidden hover:scale-105 transition group-hover:block">
+      Watch Now
+    </button>
+  `;
+            container.appendChild(movieBox);
+        });
+
+        // Search filter with "No match found" message
+        document.getElementById("search").addEventListener("input", function () {
+            const searchValue = this.value.trim().toLowerCase();
+            const noResults = document.getElementById("no-results");
+            const boxes = document.querySelectorAll(".movie-box");
+            let anyVisible = false;
+
+            boxes.forEach((box) => {
+                const title = box.querySelector("h1").innerText.toLowerCase();
+                if (title.includes(searchValue)) {
+                    box.style.display = "flex";
+                    anyVisible = true;
+                } else {
+                    box.style.display = "none";
+                }
+            });
+            if (anyVisible) {
+                noResults.classList.add("hidden");
+            } else {
+                noResults.classList.remove("hidden");
+            }
+            // noResults.classList.toggle("hidden", anyVisible);
+        });
+
+        // Handle movie box clicks and button clicks
+        const boxes = document.querySelectorAll(".movie-box");
+
+        boxes.forEach((box) => {
+            box.addEventListener("click", (e) => {
+                if (e.target.classList.contains("watch-btn")) return;
+                const videoPage = box.getAttribute("data-page");
+                if (videoPage) {
+                    window.location.href = videoPage;
+                }
+            });
+
+            const button = box.querySelector(".watch-btn");
+            if (button) {
+                button.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    const videoPage = box.getAttribute("data-page");
+                    if (videoPage) {
+                        window.location.href = videoPage;
+                    }
+                });
+            }
+        });
+
+        // Filter Movies by Category
+        document.querySelectorAll(".category-btn").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const selectedCategory = btn.getAttribute("data-category");
+                const boxes = document.querySelectorAll(".movie-box");
+                let found = false;
+
+                boxes.forEach((box, index) => {
+                    const movieCategory = movieList[index].category || "All";
+                    const match = selectedCategory === "All" || movieCategory === selectedCategory;
+                    box.style.display = match ? "flex" : "none";
+                    if (match) found = true;
+                });
+
+                document.getElementById("no-results").classList.toggle("hidden", found);
+            });
+        });
+        movieList.forEach((movie, index) => {
+            const movieBox = document.createElement("div");
+            movieBox.className = "movie-box group";
+
+            movieBox.innerHTML = `
+    <div class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300">
+      <img src="${movie.image}" alt="${movie.title}"
+        class="w-full h-48 object-cover"/>
+      <div class="p-4 bg-gradient-to-r from-pink-100 to-purple-100">
+        <h3 class="text-lg font-bold text-gray-800">${movie.title}</h3>
+        <p class="mt-1 text-sm text-gray-600 line-clamp-2">${movie.description}</p>
+      </div>
+    </div>
+  `;
+
+            // keep your existing click & category logic here...
+            container.appendChild(movieBox);
+        });
+
+    </script>
+</body>
+
+</html>
